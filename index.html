@@ -11,17 +11,22 @@
 <body>
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
 
-    <div id="app"><h1>{{ title }} </h1> 
+    <div id="app"><h1>{{ title }} </h1>
+        <!-- Form con input e button per aggiungere i to do  -->
         <form action="" @submit.prevent="add()">
         <input required type="text" v-model="newtodo" placeholder="Inserisci un nuovo todo..">
             <button>Aggiungi</button>
     </form>
+     <!-- Stampare in un ciclo i singoli to do  -->
         <ul>
-            <li v-for="singletodo in todolist"> {{ singletodo }} </li>
+            <li v-for="singletodo in todolist"> {{ singletodo }} 
+                <span @click="remove(i)"> &#128473; </span>
+            </li>
+           
         </ul>
 
    </div>
     <script type="text/javascript" src="./js/script.js"></script>
-</body> 
+</body>
 </body>
 </html>

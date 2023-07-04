@@ -2,6 +2,8 @@
 
 const { createApp } = Vue
 
+// Array di object
+
   createApp({
     data() {
       return {
@@ -16,10 +18,15 @@ const { createApp } = Vue
     },
       methods: {
         add() {
-          if(this.newtodo.trim !='') {
+          if(this.newtodo !='') {
             this.todolist.push(this.newtodo);
             this.newtodo ='';
           }
+        },
+        // Creazione di una X per rimuovere il to do 
+        remove(index) {
+          console.log('rimuovi');
+          this.todolist.splice(index,1);
         }
       }
     
