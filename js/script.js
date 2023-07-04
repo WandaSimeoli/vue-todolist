@@ -8,18 +8,33 @@ const { createApp } = Vue
     data() {
       return {
         title : 'TO DO LIST',
-        newtodo : '',
+          newtodo : '',
          todolist : [
-          'Fare il carosello',
-          'Preparare il pranzo',
-          'Programmare vacanze',
-        ]
+          {
+            text: 'Fare il carosello',
+            done: false
+          },
+          {
+            text: 'Preparare il pranzo',
+            done: true
+          },
+          {
+            text:  'Programmare vacanze',
+            done: false
+          },
+          {
+            text:  'Comprare costume',
+            done: true
+          }
+        ],
       }
     },
       methods: {
         add() {
+          // Aggiunta dei todo tramite push
           if(this.newtodo !='') {
-            this.todolist.push(this.newtodo);
+            this.todolist.push({
+              text: this.newtodo});
             this.newtodo ='';
           }
         },
@@ -29,5 +44,4 @@ const { createApp } = Vue
           this.todolist.splice(index,1);
         }
       }
-    
   }).mount('#app')

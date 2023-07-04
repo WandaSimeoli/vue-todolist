@@ -19,12 +19,14 @@
     </form>
      <!-- Stampare in un ciclo i singoli to do  -->
         <ul>
-            <li v-for="singletodo in todolist"> {{ singletodo }} 
+        <!-- Testo sbarrato quando il done è true -->
+            <li v-for="(singletodo, index) in todolist"
+            :class="{'crossed': singletodo.done == true}"
+            > {{ singletodo.text }}
+             <!-- Creazione di una X per rimuovere il to do  -->
                 <span @click="remove(i)"> &#128473; </span>
             </li>
-           
         </ul>
-
    </div>
     <script type="text/javascript" src="./js/script.js"></script>
 </body>

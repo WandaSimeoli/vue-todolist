@@ -8,3 +8,6 @@
     max-width: 1170px;
     margin: 0 auto;
 }
+.crossed {
+    text-decoration: line-through;
+}
