@@ -11,9 +11,16 @@
 <body>
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
 
-    <div id="app"><h1>{{ message }} </h1></div> 
-    <!--  -->
-   
+    <div id="app"><h1>{{ title }} </h1> 
+        <form action="" @submit.prevent="add()">
+        <input required type="text" v-model="newtodo" placeholder="Inserisci un nuovo todo..">
+            <button>Aggiungi</button>
+    </form>
+        <ul>
+            <li v-for="singletodo in todolist"> {{ singletodo }} </li>
+        </ul>
+
+   </div>
     <script type="text/javascript" src="./js/script.js"></script>
 </body> 
 </body>
