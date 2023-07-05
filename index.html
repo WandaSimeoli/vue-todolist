@@ -20,8 +20,10 @@
      <!-- Stampare in un ciclo i singoli to do  -->
         <ul>
         <!-- Testo sbarrato quando il done è true -->
-            <li v-for="(singletodo, index) in todolist"
-            :class="{'crossed': singletodo.done == true}"
+            <li class="todo" v-for="(singletodo, i) in todolist"
+            :class="{
+                'crossed': singletodo.done == true
+                }"
             > {{ singletodo.text }}
              <!-- Creazione di una X per rimuovere il to do  -->
                 <span @click="remove(i)"> &#128473; </span>

@@ -34,14 +34,15 @@ const { createApp } = Vue
           // Aggiunta dei todo tramite push
           if(this.newtodo !='') {
             this.todolist.push({
-              text: this.newtodo});
+              text: this.newtodo,
+              done: false});
             this.newtodo ='';
-          }
+          };
         },
         // Creazione di una X per rimuovere il to do 
         remove(index) {
           console.log('rimuovi');
-          this.todolist.splice(index,1);
+          this.todolist.splice(index, 1);
         }
       }
   }).mount('#app')
